@@ -14,3 +14,9 @@ version : 1.4.5
         https://developer.hashicorp.com/terraform/downloads
 ```
 
+### Points to be remembered in terraform 
+
+```
+    1) Terraform is case sensitive 
+    2) There is no concept of single quotes and usage of it is strictly prohibited
+```
