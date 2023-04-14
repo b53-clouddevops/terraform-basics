@@ -13,3 +13,5 @@ resource "aws_instance" "web" {
 output "private_dns_of_server" {
     value       = aws_instance.web.private_dns
 }
+
+
