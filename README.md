@@ -19,4 +19,6 @@ version : 1.4.5
 ```
     1) Terraform is case sensitive 
     2) There is no concept of single quotes and usage of it is strictly prohibited
+    3) By defatult terraform picks the file with the name terraform.tfvars and any varible that's declared outside of terraform.tfvars needs to be        explicitly mentioned
 ```
+
