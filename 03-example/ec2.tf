@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami                       = "ami-02fd2e8a76f43c89e"
   instance_type             = "t3.nano"
-  vpc_security_group_ids    =  aws_security_group.allow_ssh_sg.id
+  vpc_security_group_ids    = [aws_security_group.allow_ssh_sg.id]
 
   tags = {
     Name        = "Terraform-Instance-Server-Name"
