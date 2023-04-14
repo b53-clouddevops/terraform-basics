@@ -51,3 +51,11 @@ variable "sample_map" {
 output "sample_map_op" {
     value   = "Welcome to ${var.sample_map["Mode"]} - ${var.sample_map["Training"]} Training and the batch timings are ${var.sample_map["Timings"]}"
 }
+
+
+# Declaring an empty variable
+variable "city" {}
+
+output "city_name_op" {
+    value = var.city
+}
