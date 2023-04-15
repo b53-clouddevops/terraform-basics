@@ -8,3 +8,9 @@ module "ec2" {
 module "sg" {
     source  =   "./sg"
 }
+
+# Printing the output from ec2 module
+
+output "private_dns" {
+    value = module.ec2.private_dns
+}
