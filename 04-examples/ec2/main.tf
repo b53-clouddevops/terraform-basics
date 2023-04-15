@@ -11,8 +11,8 @@ resource "aws_instance" "web" {
 
 variable "sg" {}
 
-# output "private_dns" {
-#     value = aws_instance.web.private_dns
-# }
+output "private_dns" {
+    value = aws_instance.web.private_dns
+}
 
 # Test Comment
