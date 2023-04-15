@@ -1,7 +1,7 @@
 # Declaring a module with the name ec2
 module "ec2" {
     source  =   "./ec2"
-    sg      =   module.sg.sg_id
+    sg      =   module.sg.sg
 }
 
 # Declaring a module with the name sg
