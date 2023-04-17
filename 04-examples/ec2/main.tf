@@ -1,6 +1,6 @@
 # Block to create EC2
 resource "aws_instance" "web" {
-  ami                       = "ami-01337809c40300dde" //data.aws_ami.my_ami.image_id
+  ami                       = data.aws_ami.my_ami.image_id
   instance_type             = "t3.nano"
   vpc_security_group_ids    = [var.sg]
 
