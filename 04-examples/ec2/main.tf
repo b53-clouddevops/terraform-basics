@@ -11,11 +11,11 @@ resource "aws_instance" "web" {
 # Declaring the remote provisioner inside the resource
   provisioner "remote-exec" {
 
-      connection {                  // establishes connectivity to the created machine
+      connection {                   // establishes connectivity to the created machine
         type     = "ssh"
         user     = "centos"
         password = "DevOps321"
-        host     = self.private_ip
+        host     = self.private_ip   
       }
 
     inline = [
@@ -23,7 +23,6 @@ resource "aws_instance" "web" {
     ]
   }
 }
-
 
 variable "sg" {}
 
