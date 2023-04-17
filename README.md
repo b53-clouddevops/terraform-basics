@@ -47,5 +47,9 @@ Provisioner in terraform helps us to achieve executing tasks on the local machin
 
     3) For the second step to happen, we need to ensure first, connection-provisoner has to be executed, so that  conenction will be established and then we can run the `remote-exec` provisioner to run the ansible-pull command.
 
+    4) Provisioners by default are `create-time` provisioners, that means provisioners by default will only run during the creation of the resource, not all the time you run the `terraform-apply`
+
+    5) There are also a type of provisioners called `destroy-time` provsioners which will only be executed during the deletion of the resource.
+
 
 ```
