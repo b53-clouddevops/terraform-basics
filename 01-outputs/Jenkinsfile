@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code
+                git 'https://github.com/your-repo.git'
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                // Initialize Terraform
+                sh 'terraform init'
+                
+                // Generate a Terraform plan
+                sh 'terraform plan -out=tfplan'
+                
+                // Display the plan
+                sh 'terraform show tfplan'
+                
+                // Prompt for approval
+                input message: 'Deploy infrastructure?', submitterParameter: 'deployer'
+            }
+        }
+        
+        stage('Terraform Apply') {
+            steps {
+                // Apply the Terraform plan
+                sh 'terraform apply tfplan'
+                
+                // Prompt for approval
+                def inputResult = input message: 'Verify the infrastructure?', submitterParameter: 'verifier'
+                
+                // Get the name of the user who approved the input
+                def verifier = inputResult.getSubmitter()
+                
+                // Use the verifier variable in subsequent steps
+                sh "echo The infrastructure was verified by ${verifier}"
+            }
+        }
+    }
+}

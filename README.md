@@ -133,3 +133,28 @@ IP Address as classified in to classes based on their usage :
     PS : In order to achieve Network Peering, ensure both the VPC CIDR's are unique, if not peering will not work.
 
 ```
+
+
+### How to install Terrafile 
+
+
+```
+Ref : https://github.com/coretech/terrafile
+
+Terrafile is going to clone the backend module repo from the mentioned branch and keeps it local to the machine where you're executing the terraform commands
+
+```
+
+### How to created infra by supplying the backend config from a separate folder 
+
+```
+terraform init -backend-config=env-dev/dev-backend.tfvars 
+terraform plan -var-file=env-dev/dev.tfvars
+terraform apply -var-file=env-dev/dev.tfvars -auto-approve
+
+```
+
+
+### Loop in terraform
+
+Whenever you want to executre some block of terraform code n number of times, you can use `count` , count is like a for looop which is going to execute the same block n-number of times.
